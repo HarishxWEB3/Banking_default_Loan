@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 📊 Banking Default Loan – Credit Risk Analysis (J.P. Morgan Quant Research)
 
 
@@ -598,3 +599,6 @@ Aspiring Quant Researcher | Data Science \& AI Enthusiast
 
 🌐 GitHub Profile
 
+=======
+# Banking_default_Loan
+>>>>>>> a8fbd0633ad7c87c0b38607b7109aba38fb3a58c
