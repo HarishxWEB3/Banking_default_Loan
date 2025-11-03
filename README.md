@@ -1,603 +1,116 @@
-<<<<<<< HEAD
-📊 Banking Default Loan – Credit Risk Analysis (J.P. Morgan Quant Research)
-
-
-
+📘 Banking Default Loan – Quant Risk Modelling
 🧠 Overview
 
+Banking Default Loan is a predictive analytics project developed as part of the J.P. Morgan Chase & Co Quantitative Research Virtual Experience.
+This notebook explores credit-risk modelling — estimating the probability of loan default using statistical and machine-learning techniques on anonymized customer data.
 
+The project simulates a real-world quant environment where mathematical reasoning meets financial data to optimize lending strategies and reduce portfolio risk.
 
-Banking\_Default\_Loan is a predictive modeling project designed as part of the J.P. Morgan Chase Quantitative Research Virtual Internship on Forage.
+💹 Objective
 
-This notebook applies data science and quantitative finance techniques to assess loan default risk, analyze borrower behavior, and model credit probability using real-world-inspired datasets.
+To build a data-driven model that predicts whether a borrower will default on a loan, based on financial attributes and behavioral patterns.
+The outcome helps banks price risk more efficiently and improve capital allocation across portfolios.
 
+📊 Key Components
 
-
-🎯 Objective
-
-
-
-To develop a data-driven model that estimates the probability of loan default based on borrower and loan attributes — enabling financial institutions to balance profitability and risk exposure.
-
-
-
-🧮 Mathematical Foundation
-
-
-
-The project leverages Logistic Regression, a probabilistic model that estimates the likelihood of default 
-
-𝑃
-
-(
-
-Default
-
-)
-
-P(Default) given borrower characteristics 
-
-𝑋
-
-X.
-
-
-
-𝑃
-
-(
-
-Default
-
-)
-
-=
-
-1
-
-1
-
-\+
-
-𝑒
-
-−
-
-(
-
-𝛽
-
-0
-
-\+
-
-𝛽
-
-1
-
-𝑋
-
-1
-
-\+
-
-𝛽
-
-2
-
-𝑋
-
-2
-
-\+
-
-⋯
-
-\+
-
-𝛽
-
-𝑛
-
-𝑋
-
-𝑛
-
-)
-
-P(Default)=
-
-1+e
-
-−(β
-
-0
-
-&nbsp;	​
-
-
-
-\+β
-
-1
-
-&nbsp;	​
-
-
-
-X
-
-1
-
-&nbsp;	​
-
-
-
-\+β
-
-2
-
-&nbsp;	​
-
-
-
-X
-
-2
-
-&nbsp;	​
-
-
-
-\+⋯+β
-
-n
-
-&nbsp;	​
-
-
-
-X
-
-n
-
-&nbsp;	​
-
-
-
-)
-
-1
-
-&nbsp;	​
-
-
-
-
-
-Where:
-
-
-
-𝛽
-
-0
-
-β
-
-0
-
-&nbsp;	​
-
-
-
-&nbsp;= intercept
-
-
-
-𝛽
-
-𝑖
-
-β
-
-i
-
-&nbsp;	​
-
-
-
-&nbsp;= model coefficients
-
-
-
-𝑋
-
-𝑖
-
-X
-
-i
-
-&nbsp;	​
-
-
-
-&nbsp;= borrower and loan features
-
-
-
-The log-odds of default can also be expressed as:
-
-
-
-log
-
-⁡
-
-(
-
-𝑃
-
-(
-
-Default
-
-)
-
-1
-
-−
-
-𝑃
-
-(
-
-Default
-
-)
-
-)
-
-=
-
-𝛽
-
-0
-
-\+
-
-∑
-
-𝑖
-
-=
-
-1
-
-𝑛
-
-𝛽
-
-𝑖
-
-𝑋
-
-𝑖
-
-log(
-
-1−P(Default)
-
-P(Default)
-
-&nbsp;	​
-
-
-
-)=β
-
-0
-
-&nbsp;	​
-
-
-
-\+
-
-i=1
-
-∑
-
-n
-
-&nbsp;	​
-
-
-
-β
-
-i
-
-&nbsp;	​
-
-
-
-X
-
-i
-
-&nbsp;	​
-
-
-
-
-
-Model evaluation is performed using metrics like:
-
-
-
-Accuracy
-
-=
-
-𝑇
-
-𝑃
-
-\+
-
-𝑇
-
-𝑁
-
-𝑇
-
-𝑃
-
-\+
-
-𝑇
-
-𝑁
-
-\+
-
-𝐹
-
-𝑃
-
-\+
-
-𝐹
-
-𝑁
-
-Accuracy=
-
-TP+TN+FP+FN
-
-TP+TN
-
-&nbsp;	​
-
-
-
-Precision
-
-=
-
-𝑇
-
-𝑃
-
-𝑇
-
-𝑃
-
-\+
-
-𝐹
-
-𝑃
-
-;
-
-Recall
-
-=
-
-𝑇
-
-𝑃
-
-𝑇
-
-𝑃
-
-\+
-
-𝐹
-
-𝑁
-
-Precision=
-
-TP+FP
-
-TP
-
-&nbsp;	​
-
-
-
-;Recall=
-
-TP+FN
-
-TP
-
-&nbsp;	​
-
-
-
-F1-score
-
-=
-
-2
-
-×
-
-Precision
-
-×
-
-Recall
-
-Precision
-
-\+
-
-Recall
-
-F1-score=2×
-
-Precision+Recall
-
-Precision×Recall
-
-&nbsp;	​
-
-
-
-🚀 Features
-
-
-
-Exploratory Data Analysis (EDA) for credit and demographic patterns
-
-
-
-Logistic Regression and Decision Tree modeling
-
-
-
-ROC Curve \& AUC performance visualization
-
-
-
-Outlier detection and normalization pipeline
-
-
-
-Financial insights derived from quantitative results
-
-
-
-🧰 Tech Stack
-
-
-
-Language: Python
-
-Libraries: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-
-Environment: Jupyter Notebook
-
-Version Control: Git, GitHub
-
-
-
-📊 Workflow
-
-
-
-Data Cleaning \& Preprocessing
-
-
+Data cleaning and preprocessing
 
 Exploratory Data Analysis (EDA)
 
+Feature engineering (credit history, income-to-loan ratio, etc.)
 
+Logistic Regression & Random Forest modelling
 
-Feature Engineering \& Scaling
+Model performance evaluation using ROC-AUC and Confusion Matrix
 
+Profit/Loss sensitivity analysis
 
+🧮 Core Formulae
+🧠 Logistic Regression Formula
 
-Model Design \& Training
+The probability that a customer will default on a loan is given by:
 
+### 🧮 Logistic Regression Formula
 
+The probability that a customer will **default on a loan** is calculated as:
 
-Evaluation \& Statistical Interpretation
+$$
+P(Y = 1 | X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n)}}
+$$
 
+Where:  
+- \( Y = 1 \) → Customer defaults on loan  
+- \( Y = 0 \) → Customer does not default  
+- \( \beta_0, \beta_1, \dots, \beta_n \) → Model coefficients  
+- \( X_1, X_2, \dots, X_n \) → Feature variables (like income, credit score, etc.)
 
+→ Feature variables (like income, credit score, etc.)
 
-Credit Risk Insights \& Recommendations
+⚖️ Credit Risk Metrics
 
+Expected Loss (EL) is calculated as:
 
+EL=PD×LGD×EAD
 
-💡 Key Insights
+Where:
 
+PD → Probability of Default
 
+LGD → Loss Given Default
 
-Borrowers with high debt-to-income ratios have the highest default likelihood.
+EAD → Exposure at Default
 
+These parameters together quantify how a bank measures and manages expected credit loss within its loan portfolio.
 
+🧰 Tech Stack
 
-Credit score and employment stability strongly reduce risk probability.
-
-
-
-Optimal threshold tuning improved F1-score and reduced Type II errors.
-
-
+Language: Python
+Libraries: NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, Joblib
+Environment: Jupyter Notebook
+Version Control: Git & GitHub
 
 ⚙️ Setup
 
+Clone the repository and install dependencies:
 
-
-Clone and install dependencies:
-
-
-
-git clone https://github.com/HarishxWEB3/Banking\_Default\_Loan.git
-
-cd Banking\_Default\_Loan
-
+git clone https://github.com/HarishxWEB3/Banking_Default_Loan.git
+cd Banking_Default_Loan
 pip install -r requirements.txt
-
-
-
 
 
 Launch the notebook:
 
+jupyter notebook Banking_default_loan.ipynb
 
+📈 Insights
 
-jupyter notebook Banking\_Default\_Loan.ipynb
+Identified key drivers influencing loan default probability
 
+Compared multiple ML models for predictive accuracy
 
+Visualized risk distribution across borrower segments
+
+Simulated expected loss under varying macroeconomic scenarios
+
+💡 Future Enhancements
+
+Integrate Bayesian credit-risk models
+
+Incorporate macroeconomic indicators for stress testing
+
+Deploy as an interactive risk dashboard with real-time analytics
+
+👨‍💻 Author
+
+Harish R
+Aspiring Quant Researcher | AI & Finance Enthusiast
+
+🌐 GitHub Profile
 
 🧾 License
 
-
-
-This project is open-source under the MIT License.
-
-
-
-🧑‍💻 Author
-
-
-
-Harish R
-
-Aspiring Quant Researcher | Data Science \& AI Enthusiast
-
-
-
-🌐 GitHub Profile
+This project is licensed under the MIT License — you’re free to use, modify, and distribute it with attribution.
+This project is open-source and available under the MIT License.
 
 =======
 # Banking_default_Loan
